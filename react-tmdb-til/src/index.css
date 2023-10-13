@@ -1,0 +1,48 @@
+body {
+    background-color: #22254b;
+}
+
+/* 전체 틀 css */
+.app-container {
+    /* flex로 하면 기본적으로 row로 설정이된다. */
+    display: flex;
+    /* flex로 했을때 row의 길이가 browser의 길이보다 길때 다음줄로 자동으로 내려준다. (wrap 설정)*/
+    flex-wrap: wrap;
+    /* 요소들의 중앙정렬 */
+    justify-content: center;
+}
+
+/* 영화마다의 css */
+.movie-container {
+    width: 250px;
+    /* 영화마다 띄우기 */
+    margin: 16px;
+
+    background-color: #373b69;
+    color: white;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* movie-container 안에있는 img태그의 css */
+.movie-container img {
+    max-width: 100%;
+}
+
+.movie-info {
+    display: flex;
+    padding: 20px;
+    /* 요소를 양끝으로 이동 */
+    justify-content: space-between;
+    /* 가운데를 맞춤 */
+    align-items: center;
+}
+
+/* movie-info 안에있는 h4태그의 css */
+.movie-info h4 {
+    margin: 0;
+}
+
+.movie-info span {
+    margin-left: 3px;
+}
