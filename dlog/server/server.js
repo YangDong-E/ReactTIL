@@ -14,6 +14,10 @@ app.get('/', (req, res) => {
     res.send(`Open the Dlog`);
 });
 
+app.get('/api/host', (req, res) => {
+    res.send({ host: 'Dong' });
+});
+
 // listen 메소드를 사용하여 서버를 읽어온다.
 app.listen(PORT, () => {
     console.log(`Server : http://localhost:${PORT}/`);
