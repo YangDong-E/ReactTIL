@@ -1,25 +1,36 @@
 const Koa = require('koa');
 const Router = require('koa-router');
+const bodyParser = require('koa-bodyparser');
+
+const api = require('./api');
 
 const app = new Koa();
 const router = new Router();
 
 // 라우터 설정
-router.get('/', (ctx) => {
-    ctx.body = '홈';
-});
 
-router.get('/about/:name?', (ctx) => {
-    const { name } = ctx.params;
-    // name의 존재 유무에 따라 다른 결과 출력
-    ctx.body = name ? `${name}의 소개` : '소개';
-});
+router.use('/api', api.routes()); // api 라우트 적용
 
-router.get('/posts', (ctx) => {
-    const { id } = ctx.query;
-    // id의 존재 유무에 따라 다른 결과 출력
-    ctx.body = id ? `포스트 #${id}` : '포스트 아이디가 없습니다.';
-});
+// 라우터 적용 전에 body Parser 적용
+app.use(bodyParser());
+
+// // 라우터 설정
+// router.get('/', (ctx) => {
+//     ctx.body = '홈';
+// });
+
+// router.get('/about/:name?', (ctx) => {
+//     const { name } = ctx.params;
+//     // name의 존재 유무에 따라 다른 결과 출력
+//     ctx.body = name ? `${name}의 소개` : '소개';
+// });
+
+// // 라우트를 작성하면서 특정 경로에 미들웨어를 등록할땐 ctx => {} 처럼 두 번째 인자에 함수를 선언해서 등록할 수 있다.
+// router.get('/posts', (ctx) => {
+//     const { id } = ctx.query;
+//     // id의 존재 유무에 따라 다른 결과 출력
+//     ctx.body = id ? `포스트 #${id}` : '포스트 아이디가 없습니다.';
+// });
 
 // app 인스턴스에 라우터 적용
 app.use(router.routes()).use(router.allowedMethods());
