@@ -11,7 +11,7 @@ posts.get('/:id', postsCtrl.read);
 posts.delete('/:id', postsCtrl.remove);
 
 // put은 Request Body로 받은 값이 id를 제외한 모든 값을 대체
-posts.put('/:id', postsCtrl.replace);
+// posts.put('/:id', postsCtrl.replace);
 
 // patch는 기존 값은 유지하면서 새 값을 덮어 씌운다.
 posts.patch('/:id', postsCtrl.update);
