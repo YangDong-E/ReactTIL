@@ -45,6 +45,7 @@ export const write = async (ctx) => {
         title,
         body,
         tags,
+        user: ctx.state.user,
     });
     try {
         // save() 함수를 사용하여 데이터베이스에 저장

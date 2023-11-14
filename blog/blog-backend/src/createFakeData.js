@@ -9,6 +9,6 @@ export default function createFakeData() {
         tags: ['가짜', '데이터'],
     }));
     Post.insertMany(posts, (err, docs) => {
-        console.log(docs);
+        // console.log(docs);
     });
 }
