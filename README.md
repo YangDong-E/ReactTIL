@@ -28,3 +28,10 @@ react(서버)와 express(서버)의 연동 성공
 koa를 사용하여 서버를 만들고 응용하여 블로그를 만드는 공부
 
 velopert님의 책을 보고 작성해보는 연습하는중
+
+
+# 23.11.17 - redux 세팅
+
+redux세팅을 하던 와중에 설치할때 버전이 달라서 현재는 버전을 5 버전으로 낮춰서 설치하여 에러를 해결하였다.
+또한 redux-devtools-extension을 사용할때 import composeWithDevTools가 아닌 import {composeWithDevToolse}로 불러와야한다.
+렌더시 babel 경고문이 나왔었는데 `npm install --save-dev @babel/plugin-proposal-private-property-in-object`를 사용하여 경고문을 없애서 해결하였다.
