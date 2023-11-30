@@ -5,7 +5,7 @@ import palette from '../../lib/styles/palette';
 import Button from '../common/Button';
 
 /**
- * 회원가입 또는 로그인 폼을 보여줌.
+ * 회원가입 또는 로그인 폼을 보여줍니다.
  */
 
 const AuthFormBlock = styled.div`
@@ -19,7 +19,6 @@ const AuthFormBlock = styled.div`
 /**
  * 스타일링된 input
  */
-
 const StyledInput = styled.input`
     font-size: 1rem;
     border: none;
@@ -37,9 +36,8 @@ const StyledInput = styled.input`
 `;
 
 /**
- *  폼 하단에 로그인 혹은 회원가입 링크를 보여줌
+ * 폼 하단에 로그인 혹은 회원가입 링크를 보여줌
  */
-
 const Footer = styled.div`
     margin-top: 2rem;
     text-align: right;
@@ -61,7 +59,17 @@ const textMap = {
     register: '회원가입',
 };
 
-const AuthForm = ({ type, form, onChange, onSubmit }) => {
+/**
+ * 에러를 보여줍니다
+ */
+const ErrorMessage = styled.div`
+    color: red;
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+`;
+
+const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
     const text = textMap[type];
     return (
         <AuthFormBlock>
@@ -92,11 +100,12 @@ const AuthForm = ({ type, form, onChange, onSubmit }) => {
                         value={form.passwordConfirm}
                     />
                 )}
-
-                {/* <Button cyan fullWidth style={{ marginTop: '1rem' }}>
-                    로그인
-                </Button> */}
-                <ButtonWithMarginTop cyan fullWidth>
+                {error && <ErrorMessage>{error}</ErrorMessage>}
+                <ButtonWithMarginTop
+                    cyan
+                    fullWidth
+                    style={{ marginTop: '1rem' }}
+                >
                     {text}
                 </ButtonWithMarginTop>
             </form>
