@@ -35,3 +35,5 @@ velopert님의 책을 보고 작성해보는 연습하는중
 redux세팅을 하던 와중에 설치할때 버전이 달라서 현재는 버전을 5 버전으로 낮춰서 설치하여 에러를 해결하였다.
 또한 redux-devtools-extension을 사용할때 import composeWithDevTools가 아닌 import {composeWithDevToolse}로 불러와야한다.
 렌더시 babel 경고문이 나왔었는데 `npm install --save-dev @babel/plugin-proposal-private-property-in-object`를 사용하여 경고문을 없애서 해결하였다.
+
+# 23.11.30 ~ 23.12.06 - A형 독감 감염으로 인한 7일 격리 및 휴식 - push X
