@@ -5,13 +5,13 @@ import loading from './loading';
 import user, { userSaga } from './user';
 
 const rootReducer = combineReducers({
-    auth,
-    loading,
-    user,
+  auth,
+  loading,
+  user
 });
 
 export function* rootSaga() {
-    yield all([authSaga(), userSaga()]);
+  yield all([authSaga(), userSaga()]);
 }
 
 export default rootReducer;
