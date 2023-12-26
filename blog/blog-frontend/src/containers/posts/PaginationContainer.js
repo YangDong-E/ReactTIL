@@ -1,13 +1,13 @@
 import React from 'react';
 import Pagination from '../../components/posts/Pagination';
 import { useSelector } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 import { useParams, useSearchParams } from 'react-router-dom';
 
 const PaginationContainer = () => {
   const [searchParams] = useSearchParams();
 
-  const { username } = useParams();
+  const params = useParams();
+  const username = params.username.split('@')[1];
   const tag = searchParams.get('tag');
   // page가 없으면 1을 기본값으로 사용
   const page = parseInt(searchParams.get('page'), 10) || 1;
@@ -31,4 +31,4 @@ const PaginationContainer = () => {
   );
 };
 
-export default withRouter(PaginationContainer);
+export default PaginationContainer;
