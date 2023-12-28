@@ -15,9 +15,7 @@ function App() {
 
     return (
         <div className="App">
-            <h3>
-                Welcome to <u>{host}</u> Blog!{' '}
-            </h3>
+            <h3>Welcome to Blog! </h3>
         </div>
     );
 }
