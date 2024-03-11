@@ -1,0 +1,23 @@
+{
+  "name": "ch11-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "ramda": "^0.29.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.25",
+    "@types/node-fetch": "^2.6.11",
+    "@types/ramda": "^0.29.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.2"
+  }
+}
